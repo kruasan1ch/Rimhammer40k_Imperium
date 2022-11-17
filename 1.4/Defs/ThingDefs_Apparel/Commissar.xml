@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<!-- Bodysuit -->
+	<ThingDef ParentName="ApparelMakeableBase">
+		<defName>CommissarUniform</defName>
+		<label>Commissar Uniform</label>
+		<description>A full-body uniform for the Commissary, includes a layer of armour equivalent to standard issue Imperial Guard gear.</description>
+		<techLevel>Spacer</techLevel>
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+			<researchPrerequisite>FlakArmor</researchPrerequisite>
+			<effectWorking>Tailor</effectWorking>
+			<recipeUsers>
+				<li>ElectricTailoringBench</li>
+				<li>HandTailoringBench</li>
+			</recipeUsers>
+			<skillRequirements>
+				<Crafting>7</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<graphicData>
+			<texPath>Things/Imperial Guard/Commissar/Commissar</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<costList>
+			<Cloth>120</Cloth>
+			<CeramiteMedGrade>40</CeramiteMedGrade>
+		</costList>
+		<statBases>
+			<MaxHitPoints>600</MaxHitPoints>
+			<WorkToMake>38000</WorkToMake>
+			<MarketValue>1000</MarketValue>
+			<Mass>1</Mass>
+			<ArmorRating_Sharp>1.00</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.46</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.27</ArmorRating_Heat>
+			<Insulation_Cold>60</Insulation_Cold>
+			<Insulation_Heat>60</Insulation_Heat>
+			<EquipDelay>2.0</EquipDelay>
+		</statBases>
+		<equippedStatOffsets>
+			<SocialImpact>0.20</SocialImpact>
+		</equippedStatOffsets>
+		<thingCategories>
+			<li>Apparel</li>
+		</thingCategories>
+		<apparel>
+			<bodyPartGroups>
+				<li>Torso</li>
+				<li>Legs</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Things/Imperial Guard/Commissar/Commissar</wornGraphicPath>
+			<layers>
+				<li>OnSkin</li>
+				<li>Middle</li>
+				<li>Shell</li>
+			</layers>
+			<tags>
+				<li>IndustrialMilitaryAdvanced</li>
+			</tags>
+		</apparel>
+	</ThingDef>
+	<!-- Helmet -->
+	<ThingDef ParentName="ArmorHelmetMakeableBase" Name="CommissarCap">
+		<defName>CommissarCap</defName>
+		<label>Commissar Cap</label>
+		<description>The helmet commonly worn by the Imperial Guard Cadian regiments.</description>
+		<techLevel>Spacer</techLevel>
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+			<researchPrerequisite>FlakArmor</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>7</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<graphicData>
+			<texPath>Things/Imperial Guard/Commissar/Commissarcap</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<costList>
+			<Cloth>50</Cloth>
+			<CeramiteMedGrade>10</CeramiteMedGrade>
+		</costList>
+		<statBases>
+			<Mass>1.8</Mass>
+			<WorkToMake>24000</WorkToMake>
+			<MaxHitPoints>200</MaxHitPoints>
+			<MarketValue>300</MarketValue>
+			<ArmorRating_Blunt>0.18</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.72</ArmorRating_Sharp>
+			<ArmorRating_Heat>0.4</ArmorRating_Heat>
+			<Insulation_Cold>5</Insulation_Cold>
+			<Insulation_Heat>5</Insulation_Heat>
+			<EquipDelay>2.5</EquipDelay>
+		</statBases>
+		<equippedStatOffsets>
+			<SocialImpact>0.25</SocialImpact>
+		</equippedStatOffsets>
+		<apparel>
+			<bodyPartGroups>
+				<li>FullHead</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Things/Imperial Guard/Commissar/Commissarcap</wornGraphicPath>
+			<layers>
+				<li>Overhead</li>
+			</layers>
+			<tags>
+				<li>IndustrialMilitaryAdvanced</li>
+			</tags>
+		</apparel>
+	</ThingDef>
+</Defs>

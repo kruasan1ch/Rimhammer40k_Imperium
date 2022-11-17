@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--==================== Imperial - Bolt Sound =========================-->
+  <SoundDef>
+    <defName>BoltSound</defName>
+    <context>MapOnly</context>
+    <eventNames />
+    <maxSimultaneous>10</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Weapons/Ranged/Bolt_Shot</clipPath>
+          </li>
+        </grains>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <!--==================== Imperial - Plasma Gun & Plasma Pistol & Plasma Cannon Sound =========================-->
+  <SoundDef>
+    <defName>PlasmaPistolSound</defName>
+    <context>MapOnly</context>
+    <eventNames />
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+       <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Weapons/Ranged/Plasma_Pistol_Shot</clipPath>
+          </li>
+        </grains>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>PlasmaCannonSound</defName>
+    <context>MapOnly</context>
+    <eventNames />
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Weapons/Ranged/Plasma_Cannon_Shot</clipPath>
+          </li>
+        </grains>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <!--==================== Imperial - Lascannon & Long-Las & Hellgun Sound =========================-->
+  <SoundDef>
+    <defName>LascannonSound</defName>
+    <context>MapOnly</context>
+    <eventNames />
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+        <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Weapons/Ranged/Lascannon_Shot</clipPath>
+          </li>
+        </grains>
+      </li>
+    </subSounds>
+  </SoundDef>
+ <!-- <SoundDef>
+    <defName>HellgunSound</defName>
+    <context>MapOnly</context>
+    <eventNames />
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Weapons/Ranged/Hellgun_Shot</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>
+          <min>55.0</min>
+          <max>75.0</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.0</max>
+        </pitchRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>-->
+  <!--==================== Imperial - Flamer Sound =========================-->
+  <SoundDef>
+    <defName>FlamerSound</defName>
+    <context>MapOnly</context>
+    <eventNames />
+    <maxSimultaneous>10</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Weapons/Ranged/FlamerFire</clipPath>
+          </li>
+        </grains>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <!--==================== Imperial - Melta Sound =========================-->
+  <SoundDef>
+    <defName>MeltaSound</defName>
+    <context>MapOnly</context>
+    <eventNames />
+    <maxSimultaneous>10</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Weapons/Ranged/Meltagun_Shot</clipPath>
+          </li>
+        </grains>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <!--==================== Imperial - Autocannon =========================-->
+  <SoundDef>
+    <defName>AutocannonSound</defName>
+    <context>MapOnly</context>
+    <eventNames />
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Weapons/Ranged/Autocannon_Shot</clipPath>
+          </li>
+        </grains>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <!--==================== Imperial - Assaultcannon Sound =========================-->
+  <SoundDef>
+    <defName>AssaultcannonSound</defName>
+    <context>MapOnly</context>
+    <eventNames />
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Weapons/Ranged/Assaultcannon_Shot</clipPath>
+          </li>
+        </grains>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

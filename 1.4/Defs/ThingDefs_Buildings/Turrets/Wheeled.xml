@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Bases -->
+
+  <ThingDef Abstract="True" Name="RNBaseWeaponTurret" ParentName="BaseWeapon">
+    <destroyOnDrop>True</destroyOnDrop>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <canGenerateDefaultDesignator>false</canGenerateDefaultDesignator>
+    <tradeability>None</tradeability>
+    <useHitPoints>false</useHitPoints>
+    <weaponTags>
+      <li>RN_TurretGun</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>Ranged</li>
+    </weaponClasses>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef Abstract="True" Name="RNBaseArtilleryWeapon" ParentName="RNBaseWeaponTurret">
+    <weaponTags Inherit="False">
+      <li>RNArtillery</li>
+    </weaponTags>
+  </ThingDef>
+
+  <!-- Bolter -->
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Turret_ImpWheeled_HeavyBolter</defName>
+    <label>Wheeled Heavy Bolter</label>
+	 <description>A wheeled weapons platform fitted with a Heavy Bolter.</description>
+    <thingClass>Building_TurretGun</thingClass>
+	<drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Security/IG/Wheeled/IG_wheeled_base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/Security/IG/Wheeled/IG_wheeled_bolter_menu</uiIconPath>
+    <uiIconScale>0.9</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+	<altitudeLayer>Building</altitudeLayer>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+	<thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <WorkToBuild>1500</WorkToBuild>
+      <Mass>35</Mass>
+      <Beauty>0</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Refuelable">
+        <fuelLabel>Shots until rearm</fuelLabel>
+        <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
+        <fuelFilter>
+          <thingDefs>
+            <li>CeramiteLowGrade</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelCapacity>50</fuelCapacity>
+        <initialFuelPercent>1</initialFuelPercent>
+        <autoRefuelPercent>0.75</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <fuelMultiplier>0.75</fuelMultiplier>
+        <factorByDifficulty>true</factorByDifficulty>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <outOfFuelMessage>Cannot shoot: Needs rearm</outOfFuelMessage>
+        <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+      </li>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>3</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+      </li>
+      <li Class="CompProperties_Mannable">
+        <manWorkType>Violent</manWorkType>
+      </li>
+      <li Class="CompProperties_Forbiddable" />
+    </comps>
+	<size>(2,2)</size>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.75</fillPercent>
+    <!--<castEdgeShadows>true</castEdgeShadows>-->
+    <hasTooltip>true</hasTooltip>
+    <costList>
+      <CeramiteMedGrade>120</CeramiteMedGrade>
+      <CeramiteHighGrade>30</CeramiteHighGrade>
+      <ComponentIndustrial>15</ComponentIndustrial>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <constructEffect>ConstructMetal</constructEffect>
+    <specialDisplayRadius>40</specialDisplayRadius>
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Turret_ImpWheeled_HeavyBolter_GPMG</turretGunDef>
+      <turretBurstCooldownTime>2</turretBurstCooldownTime>
+      <turretTopDrawSize>2</turretTopDrawSize>
+    </building>
+    <researchPrerequisites><li>GunTurrets</li></researchPrerequisites>
+  </ThingDef>
+
+
+
+    <ThingDef ParentName="RNBaseWeaponTurret">
+    <defName>Turret_ImpWheeled_HeavyBolter_GPMG</defName>
+    <label>Wheeled Bolter</label>
+    <description>Carefully crafted gun attached to a turret.</description>
+    <graphicData>
+      <texPath>Things/Building/Security/IG/Wheeled/IG_wheeled_bolter_new</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>35</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.75</AccuracyShort>
+      <AccuracyMedium>0.80</AccuracyMedium>
+      <AccuracyLong>0.70</AccuracyLong>
+      <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+       <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_BoltGun</defaultProjectile>
+        <warmupTime>.30</warmupTime>
+        <range>38</range>
+        <forcedMissRadius>0.5</forcedMissRadius>
+        <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+        <burstShotCount>3</burstShotCount>
+        <soundCast>BoltSound</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>15</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+
+      <!-- Stubber -->
+    <ThingDef ParentName="BuildingBase">
+    <defName>Turret_ImpWheeled_Stubber</defName>
+    <label>Wheeled Stubber</label>
+	 <description>A wheeled weapons platform fitted with a stubber.</description>
+    <thingClass>Building_TurretGun</thingClass>
+	<drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Security/IG/Wheeled/IG_wheeled_base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/Security/IG/Wheeled/IG_wheeled_stubber_menu</uiIconPath>
+    <uiIconScale>0.9</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+	<altitudeLayer>Building</altitudeLayer>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+	<thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <WorkToBuild>1500</WorkToBuild>
+      <Mass>35</Mass>
+      <Beauty>0</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+   <comps Inherit="False">
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>3</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+      </li>
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Mannable">
+        <manWorkType>Violent</manWorkType>
+      </li>
+      <li Class="CompProperties_Refuelable">
+        <fuelLabel>Shots until rearm</fuelLabel>
+        <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
+        <fuelFilter>
+          <thingDefs>
+            <li>CeramiteLowGrade</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelCapacity>500</fuelCapacity>
+        <initialFuelPercent>1</initialFuelPercent>
+        <autoRefuelPercent>0.75</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <fuelMultiplier>0.75</fuelMultiplier>
+        <factorByDifficulty>true</factorByDifficulty>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <outOfFuelMessage>Cannot shoot: Needs rearm</outOfFuelMessage>
+        <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+      </li>
+    </comps>
+    <costList Inherit="False">
+      <CeramiteMedGrade>120</CeramiteMedGrade>
+      <CeramiteHighGrade>30</CeramiteHighGrade>
+      <ComponentIndustrial>15</ComponentIndustrial>
+    </costList>
+	<size>(2,2)</size>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.75</fillPercent>
+    <!--<castEdgeShadows>true</castEdgeShadows>-->
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <constructEffect>ConstructMetal</constructEffect>
+    <specialDisplayRadius>40</specialDisplayRadius>
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Turret_ImpWheeled_Stubber_GPMG</turretGunDef>
+      <turretBurstCooldownTime>2</turretBurstCooldownTime>
+      <turretTopDrawSize>2</turretTopDrawSize>
+    </building>
+    <researchPrerequisites><li>GunTurrets</li></researchPrerequisites>
+  </ThingDef>
+
+
+
+    <ThingDef ParentName="RNBaseWeaponTurret">
+    <defName>Turret_ImpWheeled_Stubber_GPMG</defName>
+    <label>Wheeled stubber</label>
+	 <description>A wheeled weapons platform fitted with an stubber.</description>
+    <graphicData>
+      <texPath>Things/Building/Security/IG/Wheeled/IG_wheeled_stubber_new</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>35</Mass>
+      <AccuracyTouch>0.8</AccuracyTouch>
+      <AccuracyShort>0.7</AccuracyShort>
+      <AccuracyMedium>0.6</AccuracyMedium>
+      <AccuracyLong>0.5</AccuracyLong>
+      <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+       <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_Autocannon</defaultProjectile>
+        <warmupTime>2</warmupTime>
+        <range>45</range>
+        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+        <burstShotCount>30</burstShotCount>
+        <soundCast>AutocannonSound</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>15</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+
+    <!-- AutoCannon -->
+    <ThingDef ParentName="BuildingBase">
+    <defName>Turret_ImpWheeled_Autocannon</defName>
+    <label>Wheeled Autocannon</label>
+	 <description>A wheeled weapons platform fitted with an autocannon.</description>
+    <thingClass>Building_TurretGun</thingClass>
+	<drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Security/IG/Wheeled/IG_wheeled_base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/Security/IG/Wheeled/IG_wheeled_autocannon_menu</uiIconPath>
+    <uiIconScale>0.9</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+	<altitudeLayer>Building</altitudeLayer>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+	<thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <WorkToBuild>1500</WorkToBuild>
+      <Mass>35</Mass>
+      <Beauty>0</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps Inherit="False">
+      <li Class="CompProperties_Refuelable">
+        <fuelLabel>Shots until rearm</fuelLabel>
+        <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
+        <fuelFilter>
+          <thingDefs>
+            <li>CeramiteLowGrade</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelCapacity>250</fuelCapacity>
+        <initialFuelPercent>1</initialFuelPercent>
+        <autoRefuelPercent>0.75</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <fuelMultiplier>0.75</fuelMultiplier>
+        <factorByDifficulty>true</factorByDifficulty>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <outOfFuelMessage>Cannot shoot: Needs rearm</outOfFuelMessage>
+        <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+      </li>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>3</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+      </li>
+      <li Class="CompProperties_Mannable">
+        <manWorkType>Violent</manWorkType>
+      </li>
+      <li Class="CompProperties_Forbiddable" />
+    </comps>
+	<size>(2,2)</size>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.75</fillPercent>
+    <!--<castEdgeShadows>true</castEdgeShadows>-->
+    <hasTooltip>true</hasTooltip>
+    <costList Inherit="False">
+      <CeramiteMedGrade>120</CeramiteMedGrade>
+      <CeramiteHighGrade>30</CeramiteHighGrade>
+      <ComponentIndustrial>15</ComponentIndustrial>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <constructEffect>ConstructMetal</constructEffect>
+    <specialDisplayRadius>40</specialDisplayRadius>
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Turret_ImpWheeled_Autocannon_GPMG</turretGunDef>
+      <turretBurstCooldownTime>2</turretBurstCooldownTime>
+      <turretTopDrawSize>2</turretTopDrawSize>
+    </building>
+    <researchPrerequisites><li>GunTurrets</li></researchPrerequisites>
+  </ThingDef>
+
+
+
+    <ThingDef ParentName="RNBaseWeaponTurret">
+    <defName>Turret_ImpWheeled_Autocannon_GPMG</defName>
+    <label>Wheeled Autocannon</label>
+	 <description>A wheeled weapons platform fitted with an autocannon.</description>
+    <graphicData>
+      <texPath>Things/Building/Security/IG/Wheeled/IG_wheeled_autocannon_new</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>35</Mass>
+      <AccuracyTouch>0.8</AccuracyTouch>
+      <AccuracyShort>0.7</AccuracyShort>
+      <AccuracyMedium>0.6</AccuracyMedium>
+      <AccuracyLong>0.5</AccuracyLong>
+      <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+       <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_Autocannon</defaultProjectile>
+        <warmupTime>1.5</warmupTime>
+        <range>38</range>
+        <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+        <burstShotCount>20</burstShotCount>
+        <soundCast>AutocannonSound</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>15</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+
+   <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_Autocannon</defName>
+    <label>IG Manned Bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/BoltShotSml</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <flyOverhead>false</flyOverhead>
+      <damageAmountBase>15</damageAmountBase>
+      <speed>80</speed>
+    </projectile>
+  </ThingDef>
+  <!-- LasCannon -->
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Turret_ImpWheeled_Lascannon</defName>
+    <label>Wheeled Lascannon</label>
+	 <description>A wheeled weapons platform fitted with an lascannon.</description>
+    <thingClass>Building_TurretGun</thingClass>
+	<drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Security/IG/Wheeled/IG_wheeled_base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/Security/IG/Wheeled/IG_wheeled_lascannon_menu</uiIconPath>
+    <uiIconScale>0.9</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+	<altitudeLayer>Building</altitudeLayer>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+	<thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases>
+      <Mass>35</Mass>
+      <AccuracyTouch>0.9</AccuracyTouch>
+      <AccuracyShort>0.9</AccuracyShort>
+      <AccuracyMedium>0.8</AccuracyMedium>
+      <AccuracyLong>0.8</AccuracyLong>
+      <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>3</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+      </li>
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Mannable">
+        <manWorkType>Violent</manWorkType>
+      </li>
+      <li Class="CompProperties_Refuelable">
+        <fuelLabel>Shots until rearm</fuelLabel>
+        <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
+        <fuelFilter>
+          <thingDefs>
+            <li>CeramiteLowGrade</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelCapacity>10</fuelCapacity>
+        <initialFuelPercent>1</initialFuelPercent>
+        <autoRefuelPercent>0.75</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <fuelMultiplier>0.75</fuelMultiplier>
+        <factorByDifficulty>true</factorByDifficulty>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <outOfFuelMessage>Cannot shoot: Needs rearm</outOfFuelMessage>
+        <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+      </li>
+    </comps>
+	<size>(2,2)</size>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.75</fillPercent>
+    <!--<castEdgeShadows>true</castEdgeShadows>-->
+    <hasTooltip>true</hasTooltip>
+    <costList>
+      <CeramiteMedGrade>120</CeramiteMedGrade>
+      <CeramiteHighGrade>30</CeramiteHighGrade>
+      <ComponentIndustrial>15</ComponentIndustrial>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <constructEffect>ConstructMetal</constructEffect>
+    <specialDisplayRadius>40</specialDisplayRadius>
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Turret_ImpWheeled_Lascannon_GPMG</turretGunDef>
+      <turretBurstCooldownTime>2</turretBurstCooldownTime>
+      <turretTopDrawSize>2</turretTopDrawSize>
+    </building>
+    <researchPrerequisites><li>GunTurrets</li></researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="VWEL_Bullet_LaserGeneric" Class="VanillaWeaponsExpandedLaser.LaserBeamDef">
+    <defName>VWEL_Bullet_Lascannon</defName>
+    <label>las bolt</label>
+    <description>A focused laser beam.</description>
+    <textures>
+      <li>Things/Projectile/Shot_Las</li>
+    </textures>
+    <seam>0</seam>
+    <causefireChance>0.1</causefireChance>
+
+    <projectile>
+      <flyOverhead>false</flyOverhead>
+      <damageDef>Bullet</damageDef>
+      <explosionRadius>0.55</explosionRadius>
+      <damageAmountBase>75</damageAmountBase>
+      <stoppingPower>4</stoppingPower>
+      <armorPenetrationBase>0.84</armorPenetrationBase>
+      <speed>105</speed>
+    </projectile>
+  </ThingDef>
+
+    <ThingDef ParentName="RNBaseWeaponTurret">
+    <defName>Turret_ImpWheeled_Lascannon_GPMG</defName>
+    <thingClass>VanillaWeaponsExpandedLaser.LaserGun</thingClass>
+    <label>Wheeled Lascannon</label>
+    <description>A wheeled weapons platform fitted with an lascannon.</description>
+    <graphicData>
+      <texPath>Things/Building/Security/IG/Wheeled/IG_wheeled_lascannon_new</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>35</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.75</AccuracyShort>
+      <AccuracyMedium>0.80</AccuracyMedium>
+      <AccuracyLong>0.70</AccuracyLong>
+      <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+       <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>VWEL_Bullet_Lascannon</defaultProjectile>
+        <warmupTime>2</warmupTime>
+        <range>38</range>
+        <ticksBetweenBurstShots>60</ticksBetweenBurstShots>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>VWE_LaserShot_Rifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>15</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+
+</Defs>

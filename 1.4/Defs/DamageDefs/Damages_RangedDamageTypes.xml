@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <DamageDef Name="LocalInjuryBase" Abstract="True">
+    <workerClass>DamageWorker_AddInjury</workerClass>
+  </DamageDef>
+  <!--==================== Imperial Damage Types =========================-->
+  <!--==================== Plasma Pistol Damage Type =========================-->
+  <DamageDef ParentName="LocalInjuryBase">
+    <defName>O21Plasma</defName>
+    <label>plasma</label>
+    <externalViolence>true</externalViolence>
+    <isExplosive>true</isExplosive>
+    <deathMessage>{0} has given in to plasma burns.</deathMessage>
+    <hediff>PlasmaBurn</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Blunt</impactSoundType>
+    <armorCategory>Heat</armorCategory>
+    <defaultDamage>25</defaultDamage>
+    <buildingDamageFactor>1</buildingDamageFactor>
+    <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+    <explosionHeatEnergyPerCell>5</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastDry</explosionCellFleck>
+    <explosionColorCenter>(0.55, 0.95, 1)</explosionColorCenter>
+    <explosionColorEdge>(0.6, 0.55, 0.9)</explosionColorEdge>
+    <soundExplosion>O21PP_Explosion</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+  </DamageDef>
+  <!--==================== Plasma Cannon Damage Type =========================-->
+  <DamageDef ParentName="LocalInjuryBase">
+    <defName>O21PlasmaCannon</defName>
+    <label>plasma cannon</label>
+    <externalViolence>true</externalViolence>
+    <isExplosive>true</isExplosive>
+    <deathMessage>{0} has given in to plasma burns.</deathMessage>
+    <hediff>PlasmaBurn</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Blunt</impactSoundType>
+    <armorCategory>Heat</armorCategory>
+    <defaultDamage>45</defaultDamage>
+    <buildingDamageFactor>1</buildingDamageFactor>
+    <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+    <explosionHeatEnergyPerCell>5</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastDry</explosionCellFleck>
+    <explosionColorCenter>(0.55, 0.95, 1)</explosionColorCenter>
+    <explosionColorEdge>(0.6, 0.55, 0.9)</explosionColorEdge>
+    <soundExplosion>O21PC_Explosion</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+  </DamageDef>
+  <!--==================== Meltagun Damage Type =========================-->
+  <DamageDef ParentName="LocalInjuryBase">
+    <defName>O21Melta</defName>
+    <label>melta</label>
+    <externalViolence>true</externalViolence>
+    <hasForcefulImpact>false</hasForcefulImpact>
+    <deathMessage>{0} was doused in fiery promethium.</deathMessage>
+    <hediff>MeltaBurn</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Blunt</impactSoundType>
+    <armorCategory>Blunt</armorCategory>
+    <defaultDamage>10</defaultDamage>
+    <buildingDamageFactor>5</buildingDamageFactor>
+    <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+    <explosionHeatEnergyPerCell>50</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastFlame</explosionCellFleck>
+    <explosionColorCenter>(1, 0.7, 0.7)</explosionColorCenter>
+    <explosionColorEdge>(1, 1, 0.7)</explosionColorEdge>
+    <soundExplosion>Explosion_Flame</soundExplosion>
+    <combatLogRules>Damage_Flame</combatLogRules>
+  </DamageDef>
+  <!--==================== Autogun Damage Type =========================-->
+  <DamageDef ParentName="LocalInjuryBase">
+    <defName>O21Auto</defName>
+    <label>autogun</label>
+    <externalViolence>true</externalViolence>
+    <isExplosive>true</isExplosive>
+    <deathMessage>{0} has been gunned down.</deathMessage>
+    <hediff>Gunshot</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Bullet</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <defaultDamage>25</defaultDamage>
+    <buildingDamageFactor>1</buildingDamageFactor>
+    <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+    <explosionHeatEnergyPerCell>5</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastDry</explosionCellFleck>
+    <soundExplosion>O21PP_Explosion</soundExplosion>
+  </DamageDef>
+  <!--==================== Ripper Damage Type =========================-->
+  <DamageDef ParentName="LocalInjuryBase">
+    <defName>O21Ripper</defName>
+    <label>Ripper</label>
+    <externalViolence>true</externalViolence>
+    <isExplosive>true</isExplosive>
+    <deathMessage>{0} has been ripped a new one.</deathMessage>
+    <hediff>Gunshot</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Bullet</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+  </DamageDef>
+  <!--==================== Assaultcannon Damage Type =========================-->
+  <DamageDef ParentName="LocalInjuryBase">
+    <defName>O21Assault</defName>
+    <label>assaultcannon</label>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been given the Emperors Justice.</deathMessage>
+    <hediff>Gunshot</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Bullet</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+  </DamageDef>
+  <!--==================== Boltgun Damage Type =========================-->
+  <DamageDef ParentName="LocalInjuryBase">
+    <defName>O21Bolt</defName>
+    <label>bolt</label>
+    <externalViolence>true</externalViolence>
+    <isExplosive>true</isExplosive>
+    <deathMessage>{0} has been given the Emperors Justice.</deathMessage>
+    <hediff>Shredded</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Bullet</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <defaultDamage>25</defaultDamage>
+    <buildingDamageFactor>1</buildingDamageFactor>
+    <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+    <explosionHeatEnergyPerCell>5</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastDry</explosionCellFleck>
+    <explosionColorCenter>(1, 0.5, 0.3)</explosionColorCenter>
+    <explosionColorEdge>(0.6, 0.5, 0.4)</explosionColorEdge>
+    <soundExplosion>O21PP_Explosion</soundExplosion>
+  </DamageDef>
+  <!--==================== Bomb Damage Type =========================-->
+  <DamageDef ParentName="LocalInjuryBase">
+    <defName>O21Bomb</defName>
+    <label>bomb</label>
+    <externalViolence>true</externalViolence>
+    <isExplosive>true</isExplosive>
+    <deathMessage>{0} has been given the Emperors Justice.</deathMessage>
+    <hediff>Shredded</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Blunt</impactSoundType>
+    <armorCategory>Blunt</armorCategory>
+    <defaultDamage>25</defaultDamage>
+    <buildingDamageFactor>1</buildingDamageFactor>
+    <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+    <explosionHeatEnergyPerCell>5</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastDry</explosionCellFleck>
+    <explosionColorCenter>(1, 0.5, 0.3)</explosionColorCenter>
+    <explosionColorEdge>(0.6, 0.5, 0.4)</explosionColorEdge>
+    <soundExplosion>Explosion_Bomb</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+  </DamageDef>
+</Defs>

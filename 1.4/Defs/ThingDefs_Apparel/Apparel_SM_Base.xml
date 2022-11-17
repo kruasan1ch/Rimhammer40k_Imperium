@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- ===== Armour ===== -->
+  <ThingDef ParentName="ArmorSmithableBase" Name="SMArmorBase" Abstract="True">
+    <techLevel>Spacer</techLevel>
+    <tradeability>Sellable</tradeability>
+    <costList>
+      <CeramiteLowGrade>140</CeramiteLowGrade>
+      <CeramiteMedGrade>120</CeramiteMedGrade>
+      <CeramiteHighGrade>100</CeramiteHighGrade>
+      <ComponentSpacer>8</ComponentSpacer>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <MaxHitPoints>1600</MaxHitPoints>
+      <WorkToMake>86000</WorkToMake>
+      <Mass>20</Mass>
+      <MarketValue>8000</MarketValue>
+      <ArmorRating_Sharp>1.5</ArmorRating_Sharp>
+      <ArmorRating_Blunt>1.5</ArmorRating_Blunt>
+      <ArmorRating_Heat>1.25</ArmorRating_Heat>
+      <Insulation_Cold>75</Insulation_Cold>
+      <Insulation_Heat>75</Insulation_Heat>
+      <EquipDelay>15</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">0.7</ToxicEnvironmentResistance>
+      <CarryingCapacity>75</CarryingCapacity>
+      <ConstructionSpeed>1.2</ConstructionSpeed>
+      <MiningSpeed>1.2</MiningSpeed>
+      <PlantWorkSpeed>-0.5</PlantWorkSpeed>
+      <MoveSpeed>-0.5</MoveSpeed>
+    </equippedStatOffsets>
+    <thingCategories>
+     <li>ApparelArmor</li>
+    </thingCategories>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Legs</li>
+        <li>Feet</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Hands</li>
+        <li>Neck</li>
+      </bodyPartGroups>
+      <layers>
+        <li>OnSkin</li>
+        <li>Middle</li>
+        <li>Shell</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags>
+        <li>AstartesApparel</li>
+        <li>UltramarineApparel</li>
+      </tags>
+    </apparel>
+    <recipeMaker>
+      <recipeUsers Inherit="False">
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <researchPrerequisite>PoweredArmor</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="SMArmorBase" Name="SMApothecaryArmorBase" Abstract="True">
+    <!-- Apothecary Armour -->
+  </ThingDef>
+  <ThingDef ParentName="SMArmorBase" Name="SMSgtArmorBase" Abstract="True">
+    <!-- Sergeant Armour -->
+  </ThingDef>
+  <ThingDef ParentName="SMArmorBase" Name="SMTermArmorBase" Abstract="True">
+    <!-- Terminator Armour -->
+    <statBases>
+      <Mass>24</Mass>
+      <ArmorRating_Sharp>2</ArmorRating_Sharp>
+      <ArmorRating_Blunt>2</ArmorRating_Blunt>
+      <ArmorRating_Heat>2</ArmorRating_Heat>
+      <Insulation_Cold>150</Insulation_Cold>
+      <Insulation_Heat>150</Insulation_Heat>
+    </statBases>
+    <equippedStatOffsets Inherit="False">
+      <MoveSpeed>-1.75</MoveSpeed>
+      <CarryingCapacity>100</CarryingCapacity>
+      <WorkSpeedGlobal>-0.5</WorkSpeedGlobal>
+    </equippedStatOffsets>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <researchPrerequisite>PoweredArmor</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="SMArmorBase" Name="SMCmdrArmorBase" Abstract="True">
+    <!-- Commander Armour -->
+  </ThingDef>
+  <ThingDef ParentName="SMArmorBase" Name="SMScoutArmorBase" Abstract="True">
+    <!-- Scout Armour -->
+    <statBases>
+      <Mass>24</Mass>
+      <ArmorRating_Blunt>1.05</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1.35</ArmorRating_Sharp>
+      <ArmorRating_Heat>1.18</ArmorRating_Heat>
+    </statBases>
+    <equippedStatOffsets Inherit="False">
+      <MoveSpeed>1.2</MoveSpeed>
+    </equippedStatOffsets>
+  </ThingDef>
+  <!-- ====== Helmets ====== -->
+  <ThingDef ParentName="ArmorSmithableBase" Name="SMHelmetBase" Abstract="True">
+    <techLevel>Spacer</techLevel>
+    <tradeability>Sellable</tradeability>
+    <costList>
+      <CeramiteLowGrade>45</CeramiteLowGrade>
+      <CeramiteMedGrade>30</CeramiteMedGrade>
+      <CeramiteHighGrade>25</CeramiteHighGrade>
+      <ComponentSpacer>2</ComponentSpacer>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <MaxHitPoints>1600</MaxHitPoints>
+      <WorkToMake>38000</WorkToMake>
+      <Mass>3</Mass>
+      <MarketValue>10000</MarketValue>
+      <ArmorRating_Sharp>1.5</ArmorRating_Sharp>
+      <ArmorRating_Blunt>1.5</ArmorRating_Blunt>
+      <ArmorRating_Heat>1.25</ArmorRating_Heat>
+      <Insulation_Cold>75</Insulation_Cold>
+      <Insulation_Heat>75</Insulation_Heat>
+      <EquipDelay>15</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">0.3</ToxicEnvironmentResistance>
+    </equippedStatOffsets>
+    <thingCategories>
+      <li>ArmorHeadgear</li>
+    </thingCategories>
+    <apparel>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <tags>
+        <li>AstartesApparel</li>
+        <li>UltramarineApparel</li>
+      </tags>
+    </apparel>
+    <recipeMaker>
+      <recipeUsers Inherit="False">
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <researchPrerequisite>PoweredArmor</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="SMHelmetBase" Name="SMApothecaryHelmetBase" Abstract="True">
+    <!-- Apothecary Armour -->
+  </ThingDef>
+  <ThingDef ParentName="SMHelmetBase" Name="SMSgtHelmetBase" Abstract="True">
+    <!-- Sergeant Armour -->
+  </ThingDef>
+  <ThingDef ParentName="SMHelmetBase" Name="SMTermHelmetBase" Abstract="True">
+    <!-- Terminator Armour -->
+     <statBases>
+      <Mass>5</Mass>
+      <ArmorRating_Sharp>2</ArmorRating_Sharp>
+      <ArmorRating_Blunt>2</ArmorRating_Blunt>
+      <ArmorRating_Heat>2</ArmorRating_Heat>
+      <Insulation_Cold>150</Insulation_Cold>
+      <Insulation_Heat>150</Insulation_Heat>
+    </statBases>
+    <recipeMaker>
+      <recipeUsers Inherit="False">
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <researchPrerequisite>PoweredArmor</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="SMHelmetBase" Name="SMCmdrHelmetBase" Abstract="True">
+    <!-- Commander Armour -->
+  </ThingDef>
+</Defs>
