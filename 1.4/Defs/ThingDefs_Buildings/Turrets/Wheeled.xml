@@ -148,6 +148,21 @@
     </verbs>
   </ThingDef>
 
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_Stubber</defName>
+    <label>IG Manned Bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/BoltShotSml</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <flyOverhead>false</flyOverhead>
+      <damageAmountBase>5</damageAmountBase>
+      <speed>80</speed>
+    </projectile>
+  </ThingDef>
+
       <!-- Stubber -->
     <ThingDef ParentName="BuildingBase">
     <defName>Turret_ImpWheeled_Stubber</defName>
@@ -253,7 +268,7 @@
       <li>
        <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>Bullet_Autocannon</defaultProjectile>
+        <defaultProjectile>Bullet_Stubber</defaultProjectile>
         <warmupTime>2</warmupTime>
         <range>45</range>
         <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
